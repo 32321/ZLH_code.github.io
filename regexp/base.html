@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //js正则表达式   创建方法有两种   即字面量法和直接创建正则表达式对象。不过一般是字面量
+//    var reg=/pattern/;
+//    var reg1=new RegExp('pattern');
+
+    //语法：reg.exec(str) str是正在执行正则表达式的目标字符串  exec负责执行 reg是一种模式
+//    var reg=/test/
+//    var str="testArr"; //正则表达式会匹配str中的子字符串，并将其输出
+//    console.log(reg.exec(str)) //["test", index: 0, input: "testArr"]
+
+//      var req=/c{3}/                    //{a,}匹配至少a个连着字符的字符串
+//      var str="sdfrctrht"     // {a}  匹配连着a个字符的字符串  {a,b}匹配a到b连着的字符的字符串
+//      console.log(req.exec(str));//null   当不匹配就会输出null         它是贪心的  他会尽可能的匹配多，而不是少
+
+//    var reg=/a*/
+//    var str="jjjjjjfbhfbaarf";   // *代表匹配0个或多个  +匹配1个或多个  ?匹配0个或多个
+//    console.log(reg.exec(str));  //["", index: 0, input: "jjjjjjfbhfbaarf"] 这是因为在字符串的来头没有a
+
+        //正则表达式都是尽可能的多匹配字符串，但若想尽可能少，就要在写好的正则表达式后面追加一个?
+
+        //   /^xxx/表示开头为xxx   /xxx$/表示结尾为xxx
+
+       // /./表示匹配出换行符/n以外的所有字符
+
+       //   /a|b/ 表示匹配a或b     /[abc]/ 匹配abc其中的一个字符
+       //  /[a-zA-Z0-9_]/   分别表示小写字符 大写字母  数字 下划线  ，可以合着写也可以分开写
+    //                    但是^在中括号里的话表示非，不是这些东西
+
+
+       var req=/\bc/;       // \b 表示边界     \B  表示非边界，只匹配边界不是c的字符串
+       var str="defc";
+       console.log(req.exec(str));//null当全是英文字符时严格匹配  即\b在前面就是开头，在后面就是结尾
+                                    //当包含汉字时，就没有那么严格了，开头结尾都可表示
+
+        //  \d表示匹配数字   \D表示非数字   \s表示空格  \S 表示非空格字符
+
+       // \w 匹配单词字符即[a-zA-Z0-9_]   \W匹配非单词字符  有汉字和? 都算是非单词字符
+
+</script>
+</body>
+</html>

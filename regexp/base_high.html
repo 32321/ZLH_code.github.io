@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //正则表达式进阶部分
+//        var req=/\w\w/;
+//        var str="fewfwe";
+//        console.log(req.exec(str));//["fe", index: 0, input: "fewfwe"]
+//        var req1=/(\w)(\w)/;
+//        var str1="fewfwe";
+//        console.log(req1.exec(str1));//["fe", "f", "e", index: 0, input: "fewfwe"]
+       //只是加了括号结果就不一样了 这是因为变成了子正则表达式 bl是整个匹配的内容
+                                        //另外两个分别是括号里面匹配到的内容
+
+//        var req=/(\w)\1/;  // \1表示反向引用
+//        var str="sggtge";    //  这是因为 \1表示的是第一个括号里面匹配的内容，而不是第一个括号的内容
+//        console.log(req.exec(str));//null
+
+         var req=/(\w)(\w)\2\1/;
+         var str="woow";    //通过这个例子和上个例子就能明白了反向引用的含义
+         console.log(req.exec(str));//["woow", "w", "o", index: 0, input: "woow"]
+
+         // ?:  ?=   ?!                /pattern/g 表示全部匹配   /pattern/i 不分大小写
+         //    \ 转义符 ，必要时使用        /^b/m;  表示开头换成了行首
+
+
+
+         //reg.test(str)   返回值是true/false  表示是否匹配    < ==str.match(req)
+</script>
+</body>
+</html>
